@@ -1,0 +1,22 @@
+/* .video-grid-container {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   background-color: black;
+} */
+#video-container{
+   height: 400px;
+   width: 600px;
+   background: blue;
+}
+.main-grid-container {
+   display: grid;
+   grid-template-columns: 80% 40%;
+}
+
+video {
+   /* border-radius: 25%; */
+   padding: 10px;
+   background-color: black;
+   height: 200px;
+   width: 250px;
+}

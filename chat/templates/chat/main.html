@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>BlueMeet</title>
+        <link rel="stylesheet" href="{%static 'css/main.css'%}" />
+        <script
+            src="https://kit.fontawesome.com/6510466b6c.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        {% csrf_token %} {{ room_name|json_script:"room-name" }}
+
+        <div class="overlay" id="overlay">
+        <div class="box">
+            <div class="head-name">Enter a Name</div>
+            <input type="text" class="name-field" placeholder="Type here.." id="name-field"></input><br>
+            <button class="continue-name">Continue</button>
+
+        </div>
+    </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-1">
+                    
+                    <div class="main-grid-conatiner">
+                        <div class="video-container">
+                            <div class="video-wrapper">
+                                <div class="nametag" id="myname">yourname</div>
+
+                                <video
+                                id="local-video"
+                                autoplay
+                                playsinline
+                            ></video>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+
+                    <div class="btn-group">
+                        <button class="btn" id="btn-toggle-audio">
+                            <i class="fa fa-microphone fa-2x"></i>
+                        </button>
+                        <button class="btn" id="btn-toggle-video">
+                            <i class="fa fa-video-camera fa-2x"></i>
+                        </button>
+                        <button class="btn" id="btn-share-screen">
+                            <i class="fa fa-desktop fa-2x"></i>
+                        </button>
+                        <button class="btn" id="btn-leave">
+                            <i
+                                class="fa fa-phone-slash fa-2x"
+                                aria-hidden="true"
+                            ></i>
+                        </button>
+                        <div class="copycont">
+                            <div id="a"></div>
+                            <button id="button1" >
+                                Copy Link
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <!-- <div class="invite">
+                        <h3>CHAT</h3>
+
+                        <div id="chat">
+                            <div id="messges">
+                                <ul id="message-list"></ul>
+                            </div>
+                        </div>
+                        <div class="msg-ctn">
+                            <input
+                                id="msg"
+                                placeholder="type message .."
+                            /><button class="chat-send">Send</button>
+                        </div>
+                    </div> -->
+                     <div class="right-cont">
+                <div class="head-title">
+
+                <div class="chats"><i class="fas fa-comment-alt mr-1"></i>Chats</div>
+
+            </div>
+
+            <div class="chat-cont">
+                <ul id="message-list"></ul>
+            </div>
+            <div class="chat-input-cont">
+                <div class="ci-cont"><input type="text" class="chat-input" placeholder="Type chat here.."></div>
+                <div class="ci-send"><button class="chat-send">Send</button></div>
+            </div>
+            <div class="attendies-cont">
+                
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>
